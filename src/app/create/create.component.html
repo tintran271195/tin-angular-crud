@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submit()" >
+  <div class="form-group">
+    <label for="title">Book Name</label>
+    <input type="text" class="form-control" formControlName='title' id="title" placeholder="Input title">
+    <span class="text-danger" *ngIf="form?.controls?.title?.dirty && form && form?.controls?.title?.errors">
+      {{ form?.controls?.name?.errors?.required ? "This field is required" : "Name must less or equals than 30" }}
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author Name</label>
+    <input type="text" class="form-control" formControlName='author' id="author" placeholder="Input Author">
+    <span class="text-danger" *ngIf="form?.controls?.author?.dirty && form && form?.controls?.author?.errors">
+      {{ form?.controls?.name?.errors?.required ? "This field is required" : "Name must less or equals than 30" }}
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" formControlName='description' id="description" name="description" placeholder="Input Description">
+    <span class="text-danger" *ngIf="form?.controls?.description?.dirty && form?.controls?.description?.errors">Price value to be greater than or equal to 1</span>
+  </div>
+  <button class="btn btn-primary d-block mt-4" type="submit">Submit</button>
+</form>
+
